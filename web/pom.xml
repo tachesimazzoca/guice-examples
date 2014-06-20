@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.tachesimazzoca</groupId>
-  <artifactId>guice-examples-web</artifactId>
+  <artifactId>guice-web</artifactId>
   <packaging>jar</packaging>
   <version>0.1.0-SNAPSHOT</version>
   <name>Google Guice Examples | Web</name>
@@ -48,17 +48,13 @@
     </dependency>
   </dependencies>
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
+        <version>2.4</version>
         <configuration>
-          <warName>guice-examples-web</warName>
+          <warName>guice-web</warName>
           <webResources>
             <resource>
               <directory>src/main/webapp</directory>
@@ -66,27 +62,13 @@
           </webResources>
         </configuration>
       </plugin>
-    </plugins>
-  </build>
-  <reporting>
-    <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9</version>
         <configuration>
           <locale>en</locale>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.8</version>
-        <configuration>
-          <configLocation>${basedir}/etc/checkstyle/checks.xml</configLocation>
-          <consoleOutput>true</consoleOutput>
-        </configuration>
-      </plugin>
     </plugins>
-  </reporting>
+  </build>
 </project>
